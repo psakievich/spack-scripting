@@ -25,6 +25,7 @@
 
 import argparse
 import collections
+import dummy
 import sys
 
 import spack
@@ -70,6 +71,7 @@ def setup_parser(subparser):
 
 def filter(parser, args):
 
+    dummy.hello_world()
     Request = collections.namedtuple('Request', 'abstract,concrete')
     specs = [Request(s, s.concretized())
              for s in spack.cmd.parse_specs(args.specs)]
